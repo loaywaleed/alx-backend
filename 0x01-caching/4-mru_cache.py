@@ -5,7 +5,7 @@ Basic caching module in python
 BaseCaching = __import__("base_caching").BaseCaching
 
 
-class LRUCache(BaseCaching):
+class MRUCache(BaseCaching):
     """Class representing basic caching in python"""
     def __init__(self):
         super().__init__()
