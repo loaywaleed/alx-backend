@@ -5,7 +5,7 @@ Basic caching module in python
 BaseCaching = __import__("base_caching").BaseCaching
 
 
-class BaseCache(BaseCaching):
+class BasicCache(BaseCaching):
     """Class representing basic caching in python"""
 
     def put(self, key, item):
