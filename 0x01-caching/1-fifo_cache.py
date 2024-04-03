@@ -19,7 +19,6 @@ class FIFOCache(BaseCaching):
                 print("DISCARD: {}".format(discarded))
             self.cache_data[key] = item
 
-
     def get(self, key):
         """Method that gets data from cache"""
         return self.cache_data.get(key)
