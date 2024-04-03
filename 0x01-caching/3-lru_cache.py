@@ -15,9 +15,9 @@ class LRUCache(BaseCaching):
         """Method that adds data to cache"""
         if key and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                discarded = self.cache_data.pop(self.order[0])
-                self.order.pop(0)
-                print("DISCARD: {}".format(discarded))
+                removed_from_order = self.order.pop(0)
+                discarded = self.cache_data.pop(removed_from_order)
+                print("DISCARD: {}".format(removed_from_order))
             self.cache_data[key] = item
             self.order.append(key)
 
