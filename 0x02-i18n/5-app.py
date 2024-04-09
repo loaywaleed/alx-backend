@@ -44,7 +44,7 @@ def get_locale():
 @app.route("/")
 def home():
     """Route that returns 1-index.html"""
-    return render_template("4-index.html")
+    return render_template("5-index.html")
 
 
 if __name__ == '__main__':
