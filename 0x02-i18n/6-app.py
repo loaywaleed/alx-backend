@@ -44,13 +44,15 @@ def get_locale():
     """ method that gets locale from url"""
     if request.args.get("locale") in app.config["LANGUAGES"]:
         return request.args.get("locale")
+    if g.user and g.user.get("locale") in app.config["LANGUAGES"]:
+        return g.user["locale"]
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route("/")
 def home():
     """Route that returns 1-index.html"""
-    return render_template("5-index.html")
+    return render_template("6-index.html")
 
 
 if __name__ == '__main__':
