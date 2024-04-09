@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    """Route that returns 0-index.html"""
     return render_template("0-index.html")
 
 
