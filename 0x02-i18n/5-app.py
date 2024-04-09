@@ -33,6 +33,12 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
+@app.before_request
+def before_request():
+    """function to obtain current user"""
+    g.user = get_user()
+
+
 @babel.localeselector
 def get_locale():
     """ method that gets locale from url"""
