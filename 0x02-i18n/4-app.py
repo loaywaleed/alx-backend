@@ -20,14 +20,16 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    """Getting local language"""
+    """ method that gets locale from url"""
+    if request.args.get("locale") in app.config["LANGUAGES"]:
+        return request.args.get("locale")
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route("/")
 def home():
     """Route that returns 1-index.html"""
-    return render_template("3-index.html")
+    return render_template("4-index.html")
 
 
 if __name__ == '__main__':
